@@ -14,7 +14,7 @@ def post_detail(request, slug):
    :template: `blog/post_detail.html`
    """
 
-   queryset = Post.objects.all()  # filter(status=1)
+   queryset = Post.objects.filter(status=1)  # all()
    post = get_object_or_404(queryset, slug=slug)
 
    return render(
@@ -25,6 +25,6 @@ def post_detail(request, slug):
 
 # Create your views here.
 class PostList(generic.ListView):
-   queryset = Post.objects.all()
+   queryset = Post.objects.filter(status=1)  #all()
    template_name = "blog/index.html"
    paginate_by = 6
