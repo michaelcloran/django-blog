@@ -31,12 +31,3 @@ def post_detail(request, slug):
    )
 
 
-def about_detail(request):
-   queryset = About.objects.all().order_by('-updated_on').first()
-   about = get_object_or_404(queryset, title=title)
-
-   return render(
-      request,
-      "about/about_detail.html",
-      {"about": about},
-   )
