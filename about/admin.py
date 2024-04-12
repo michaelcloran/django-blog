@@ -5,7 +5,9 @@ from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
-
+    """
+    allows editing of the about user
+    """
     summernote_fields = ('content',)
 
 
@@ -18,5 +20,9 @@ class AboutAdmin(SummernoteModelAdmin):
 
 @admin.register(CollaborateRequest)
 class CollaborateRequestAdmin(admin.ModelAdmin):
+    """
+    Allows the collaboration form in admin to be displayed
+    with message and a read tick
+    """
 
     list_display = ('message', 'read',)
